@@ -1,14 +1,5 @@
 # code-xmas
 
-A Clojure library designed to ... well, that part is up to you.
+This is a respitory for my clojure solutions to the problems at adventofcode.com
 
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+The problems are really fun and not too hard, you should really check them out!
