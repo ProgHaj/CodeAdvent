@@ -22,4 +22,15 @@
 (apply + (map everyhting file))
 
 
-;;Part 2
+;part 2
+
+(defn calculate-ribbon [sorted-array]
+  )
+
+(defn functional-solution-wowowo [file]
+  (loop [coll file
+         result 0]
+    (if (empty? coll)
+      result
+      (let [sorted-first (sort (str/split (first coll) #"x"))]
+        (recur (rest coll) (+ result (calculate-ribbon sorted-first)))))))
