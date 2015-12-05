@@ -13,24 +13,26 @@
   (+ (side (coll 0) (coll 1)) (side (coll 0) (coll 2)) (side (coll 1) (coll 2)) (area (coll 0) (coll 1))))
 
 (defn do-it [tmp]
-  (map #(Integer. (re-find #"\d+" %)) (str/split tmp #"x")))
+  (into [] (sort (map #(Integer. (re-find #"\d+" %)) (str/split tmp #"x")))))
 
 (defn everyhting [tmp]
-  (let [sorted (sort (do-it tmp))]
-    (calculate (into [] sorted))))
+  (let [sorted (do-it tmp)]
+    (calculate sorted)))
 
 (apply + (map everyhting file))
 
 
 ;part 2
 
-(defn calculate-ribbon [sorted-array]
-  )
+(defn calculate-ribbon [coll]
+  (+ (* (coll 0) 2) (* (coll 1) 2) (* (coll 0) (coll 1) (coll 2))))
 
 (defn functional-solution-wowowo [file]
   (loop [coll file
          result 0]
     (if (empty? coll)
       result
-      (let [sorted-first (sort (str/split (first coll) #"x"))]
+      (let [sorted-first (do-it(first coll))]
         (recur (rest coll) (+ result (calculate-ribbon sorted-first)))))))
+
+(functional-solution-wowowo file)
