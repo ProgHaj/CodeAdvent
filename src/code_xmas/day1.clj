@@ -1,4 +1,4 @@
-(ns code-xmas.core
+(ns code-xmas.day1
   (:require [clojure.string :as str]))
 
 (def file (slurp "resources/brackets"))
